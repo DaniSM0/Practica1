@@ -10,13 +10,14 @@ void main()
 	uint32 u32NumBits=0;
 	uint32 u32Ope=4;
 	uint32 u32CorVar=0;
+	uint32 u32Valor=0;
 
 	printf("Escoga el tamano de su variable 8, 16 o 32 bits: ");
 	scanf("%d", &u32NumBits);
 	
 	if (u32NumBits == 8 || u32NumBits == 16 || u32NumBits == 32)
 	{
-		while (u32Ope > 3 )
+		while ( 1 )
 		{
 		    printf("Seleccione una operacion\n");
 		    printf("1)Operacion OR\n");
@@ -28,10 +29,27 @@ void main()
 			    printf("Corrimiento para la operacion: ");
 			    scanf("%d", &u32CorVar);
 			    if (u32CorVar > u32NumBits)
+			    {
 			    	printf("Error: El numero es mayor al numero de bits");
+			    }
 			    else 
 			    {
-			    	printf("Realizar la operación");
+			    	if(u32Ope == 1)
+				    {
+				    	u32Valor|= (1 << u32CorVar);
+				    	printf("La operación OR es: %d\n", u32Valor);
+				    }
+				    else if (u32Ope == 2)
+				    {
+				    	u32Valor&=~ (1 << u32CorVar);
+				    	printf("La operación AND es: %d\n", u32Valor);
+				    }
+				    else
+				    {
+				    	u32Valor^= (1 << u32CorVar);
+				    	printf("La operación XOR es: %d\n", u32Valor);
+				    }
+
 			    }
 			}
 		    else 
