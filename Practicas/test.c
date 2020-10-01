@@ -26,7 +26,7 @@ void main()
 		    if (u32Ope >= 1 && u32Ope <= 3)
 		    {
 			    printf("Corrimiento para la operacion: ");
-			    scanf("%d\n", &u32CorVar);
+			    scanf("%d", &u32CorVar);
 			    if (u32CorVar > u32NumBits)
 			    	printf("Error: El numero es mayor al numero de bits");
 			    else 
