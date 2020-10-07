@@ -26,10 +26,15 @@ void main (void)
 	u16TotAver = GENFUN_u8GetAverage ( &au8AverList[0], 10 );
 	printf("After Testing: %d\n\n", u16TotAver);
 	printf("Testing MemSet\n");
-	GENFUN_u8MemSet ( &au8AverList[0], u8Char2Set, 10 );
-	printf("After Testing: %s\n\n", au8AverList);
-	printf("Testing MemCopy\n");
-
+	GENFUN_u8MemSet ( &au8AverList[0], u8Char2Set, 5 );
+	printf("After Testing: %d\n", au8AverList[0]);
+	printf("After Testing: %d\n", au8AverList[1]);
+	printf("After Testing: %d\n", au8AverList[2]);
+	printf("After Testing: %d\n", au8AverList[3]);
+	printf("After Testing: %d\n", au8AverList[4]);
+	
+	
+	//printf("Testing MemCopy\n");
 }
 
 
