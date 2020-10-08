@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "GENFUN.h"
+#include <time.h> 
 
 void main (void)
 {
@@ -11,6 +12,8 @@ void main (void)
 	uint8 u8Char2Set = 32;
 	uint8 au8FirstArray[5] = {5,4,3,2,1};
 	uint8 au8SecArray[5] = {1,2,3,4,5};
+	uint8 au8Graph [10] = {5,7,4,2,1,8,6,4,3,7};
+	srand(time(0));
 
 	printf("\nTesting vCaps_On\n");
 	printf("Before testing: %s\n", au8ListArray);
@@ -32,11 +35,17 @@ void main (void)
 	printf("After Testing: %d\n", au8AverList[2]);
 	printf("After Testing: %d\n", au8AverList[3]);
 	printf("After Testing: %d\n", au8AverList[4]);
-	
+	printf("Testing MemCopy\n");
+	GENFUN_u8MemCopy ( &au8FirstArray[0], &au8SecArray[0], 5);
+	printf("After testing: %d\n", au8SecArray[0]);
+	printf("After testing: %d\n", au8SecArray[1]);
+	printf("After testing: %d\n", au8SecArray[2]);
+	printf("After testing: %d\n", au8SecArray[3]);
+	printf("After testing: %d\n", au8SecArray[4]);
+
 	
 	//printf("Testing MemCopy\n");
 }
-
 
 void GENFUN_vCapsOn (uint8 *pu8Src, uint8 u8SizeOfList) 
 {
@@ -118,4 +127,33 @@ void GENFUN_u8MemSet (uint8 *pu8Src, uint8 u8Char2Set, uint8 u8SizeOfList)
 	}
 }
 
+void GENFUN_u8MemCopy (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
+{
+	while (u8SizeOfList != 0 )
+	{
+		*pu8Dest = *pu8Src;
+		pu8Src++;
+		pu8Dest++;
+		u8SizeOfList--;
+	}
+}
 
+void GENFUN_vSortList (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
+{
+
+}
+
+void GENFUN_vSoftSignal (uint8 *pu8Src, uint8 *pu8Dest)
+{
+	uint8 u8Test = 0;
+	while ( u8Test )
+}
+
+uint8 printRandoms(uint8 lower, uint8 upper,  uint8 count) 
+{ 
+    uint8 i; 
+    uint8 num;
+    num = (rand() % (upper - lower + 9)) + lower; 
+    //printf("%d \n", num); 
+    return num;
+} 
