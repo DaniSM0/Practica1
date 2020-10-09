@@ -12,8 +12,8 @@ void main (void)
 	uint8 u8Char2Set = 32;
 	uint8 au8FirstArray[5] = {5,4,3,2,1};
 	uint8 au8SecArray[5] = {1,2,3,4,5};
-	uint8 au8Graph [10] = {5,7,4,2,1,8,6,4,3,7};
-	srand(time(0));
+	uint8 au8Graph [255];
+	uint8 au8SecGrap [254] = {0};
 
 	printf("\nTesting vCaps_On\n");
 	printf("Before testing: %s\n", au8ListArray);
@@ -41,7 +41,9 @@ void main (void)
 	printf("After testing: %d\n", au8SecArray[1]);
 	printf("After testing: %d\n", au8SecArray[2]);
 	printf("After testing: %d\n", au8SecArray[3]);
-	printf("After testing: %d\n", au8SecArray[4]);
+	printf("After testing: %d\n\n", au8SecArray[4]);
+	printf("Testing SoftSignal\n");
+	GENFUN_vSoftSignal ( &au8Graph[0], &au8SecGrap[0] );
 
 	
 	//printf("Testing MemCopy\n");
@@ -145,15 +147,16 @@ void GENFUN_vSortList (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList)
 
 void GENFUN_vSoftSignal (uint8 *pu8Src, uint8 *pu8Dest)
 {
-	uint8 u8Test = 0;
-	while ( u8Test )
+	uint8 u8SizeOfList = 254;
+	uint16 u16Sum = 0;
+	while ( u8SizeOfList != 0 )
+	{
+		u16Sum = *pu8Src;
+		pu8Src++;
+		u16Sum += *pu8Src;
+		*pu8Dest = u16Sum/2;
+		printf("%d\n", *pu8Dest);
+		u8SizeOfList--;
+		pu8Dest++;
+	}
 }
-
-uint8 printRandoms(uint8 lower, uint8 upper,  uint8 count) 
-{ 
-    uint8 i; 
-    uint8 num;
-    num = (rand() % (upper - lower + 9)) + lower; 
-    //printf("%d \n", num); 
-    return num;
-} 
