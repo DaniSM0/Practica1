@@ -16,9 +16,11 @@ void main (void)
 	uint8 au8SecArray[5] = {1,2,3,4,5};
 	uint8 au8Graph [255];
 	uint8 au8SecGrap [254] = {0};
-	uint8 au8FrutitaArray [10] ;
-	uint8 au8DesFrutita [10] ;
+	uint8 au8FrutitaArray [255] ;
+	uint8 au8DesFrutita [255] ;
 	uint8 i;
+	uint8 au8DisOArray [10] = {8, 12, 14, 2, 9, 21, 15, 19, 5, 24};
+	uint8 au8OrdArray [10] = {0};
 	srand(time(0));
 
 	printf("\nTesting vCaps_On\n");
@@ -46,7 +48,7 @@ void main (void)
 	printf("After Testing: %d\n", au8AverList[3]);
 	printf("After Testing: %d\n", au8AverList[4]);
 
-	printf("Testing MemCopy\n");
+	printf("\nTesting MemCopy\n");
 	GENFUN_u8MemCopy ( &au8FirstArray[0], &au8SecArray[0], 5);
 	printf("After testing: %d\n", au8SecArray[0]);
 	printf("After testing: %d\n", au8SecArray[1]);
@@ -54,19 +56,45 @@ void main (void)
 	printf("After testing: %d\n", au8SecArray[3]);
 	printf("After testing: %d\n\n", au8SecArray[4]);
 
+
+	printf("Testing SortList\n");
+	printf("Before Testing :%d\n");
+	GENFUN_vSortList ( &au8DisOArray[0], &au8OrdArray[0], 10);
+	printf("\nAfter Testing\n");
+	printf("After testing: %d\n", au8OrdArray[0]);
+	printf("After testing: %d\n", au8OrdArray[1]);
+	printf("After testing: %d\n", au8OrdArray[2]);
+	printf("After testing: %d\n", au8OrdArray[3]);
+	printf("After testing: %d\n\n", au8OrdArray[4]);
+
+
+
 	printf("Testing SoftSignal\n");
 	printf("After Testing\n");
 	GENFUN_vSoftSignal ( &au8Graph[0], &au8SecGrap[0] );
 	printf("\n");
 
-	printf("Testing FilterSignal\n");
-	for ( i = 0; i < 10; i++)
-	{
-		au8FrutitaArray[i] = printRandoms (5, 20, 1);
-	}
-	printf("\nAfter Testing\n");
-	GENFUN_vFilterSignal ( &au8FrutitaArray[0], &au8DesFrutita[0], LIMITE_SUPERIOR_DEL_FILTRO, LIMITE_INFERIOR_DEL_FILTRO);
 
+	printf("Testing FilterSignal\n");
+	for ( i = 0; i < 250; i++)
+	{
+		au8FrutitaArray[i] = printRandoms (1, 20, 1);
+	}
+	printf("\nDuring Testing\n");
+	GENFUN_vFilterSignal ( &au8FrutitaArray[0], &au8DesFrutita[0], LIMITE_SUPERIOR_DEL_FILTRO, LIMITE_INFERIOR_DEL_FILTRO);
+	printf("\n");
+	printf("Final Array\n");
+	/*Profe solo imprimí 10 en la cadena jajaja, para no poner todos*/
+	printf("%d, ", au8DesFrutita[0]);
+	printf("%d, ", au8DesFrutita[1]);
+	printf("%d, ", au8DesFrutita[2]);
+	printf("%d, ", au8DesFrutita[3]);
+	printf("%d, ", au8DesFrutita[4]);	
+	printf("%d, ", au8DesFrutita[5]);	
+	printf("%d, ", au8DesFrutita[6]);
+	printf("%d, ", au8DesFrutita[7]);
+	printf("%d, ", au8DesFrutita[8]);
+	printf("%d ", au8DesFrutita[9]);	
 
 
 
@@ -186,7 +214,7 @@ void GENFUN_vSoftSignal (uint8 *pu8Src, uint8 *pu8Dest)
 
 void GENFUN_vFilterSignal (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8MaxVal, uint8 u8MinVal)
 {
-	uint8 u8SizeOfList = 10;
+	uint8 u8SizeOfList = 250;
 	uint8 u8Operacion = 0; 
 	uint8 u8Operacion2 = 0;
 
@@ -196,25 +224,25 @@ void GENFUN_vFilterSignal (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8MaxVal, uint8 
 		{
 			u8Operacion = *pu8Src - LIMITE_SUPERIOR_DEL_FILTRO;
             *pu8Dest = *pu8Src - u8Operacion;
-            printf("\n| %d ----> %d |", *pu8Src, *pu8Dest);
+            printf("\n %d Cmabia a:  %d ", *pu8Src, *pu8Dest);
 
 		}
 		else if ( *pu8Src < LIMITE_INFERIOR_DEL_FILTRO)
 		{
 			u8Operacion2 = LIMITE_INFERIOR_DEL_FILTRO - *pu8Src;
             *pu8Dest = *pu8Src + u8Operacion2;
-            printf("\n| %d ----> %d |", *pu8Src, *pu8Dest);
+            printf("\n %d Cambia a: %d ", *pu8Src, *pu8Dest);
 		}
 		else
 		{
 			*pu8Dest = *pu8Src;
-			printf("\n| Cumple %d        |", *pu8Dest);
+			printf("\n Cumple %d ", *pu8Dest);
 		}
 		pu8Src++;
 		pu8Dest++;
 		u8SizeOfList--;
 	}
-
+	printf("\n");
 }
 
 uint8 printRandoms(uint8 lower, uint8 upper,  uint8 count) 

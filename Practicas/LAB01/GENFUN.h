@@ -27,3 +27,4 @@ void GENFUN_u8MemCopy (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList);
 void GENFUN_vSoftSignal (uint8 *pu8Src, uint8 *pu8Dest);
 void GENFUN_vFilterSignal (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8MaxVal, uint8 u8MinVal);
 uint8 printRandoms(uint8 lower, uint8 upper,  uint8 count);
+void GENFUN_vSortList (uint8 *pu8Src, uint8 *pu8Dest, uint8 u8SizeOfList);
