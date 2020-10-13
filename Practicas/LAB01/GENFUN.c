@@ -3,6 +3,10 @@
 #include <time.h> 
 #include <stdlib.h> 
 
+/*! 
+Calificacion: 85
+Feedback: Indentación, la funciones no especifican que se imprima codigo dentro de ellas
+*/
 
 void main (void)
 {
@@ -99,6 +103,7 @@ void main (void)
 
 
 }
+
 
 void GENFUN_vCapsOn (uint8 *pu8Src, uint8 u8SizeOfList) 
 {
