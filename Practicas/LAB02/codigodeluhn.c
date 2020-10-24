@@ -7,7 +7,7 @@ uint8 u8LuchCheck (uint8 *pu8Data, uint8 u8SizeOfList);
 
 void main() 
 {
-	uint8 au8NumOfCard[16]= {4,1,6,8,8,1,8,8,4,4,4,4,7,1,1,5};
+	uint8 au8NumOfCard[16]= {4,3,6,7,9,1,6,8,5,4,4,6,7,1,2,5};
 	uint8 u8Check = 0;
 	uint8 i;
 
@@ -32,7 +32,7 @@ void main()
 
 uint8 u8LuchCheck (uint8 *pu8Data, uint8 u8SizeOfList)
 {
-	uint8 i,j,n,residuo,modu,valid,suma=0,sumatotal=0,u8Check;
+	uint8 i, j, n, u8residuo, u8modu, u8valid, u8suma=0, u8sumatotal=0, u8Check;
 	
 	for( i = 0; i <= 15; i+=2)
 	{
@@ -65,9 +65,9 @@ uint8 u8LuchCheck (uint8 *pu8Data, uint8 u8SizeOfList)
         if (*pu8Data >= 10)
         {
             j = *pu8Data;
-            residuo = j % 10;
-            suma = residuo + 1;
-            *pu8Data = suma;          
+            u8residuo = j % 10;
+            u8suma = u8residuo + 1;
+            *pu8Data = u8suma;          
         }
         else 
         {
@@ -83,12 +83,12 @@ uint8 u8LuchCheck (uint8 *pu8Data, uint8 u8SizeOfList)
 	printf("\nSuma de todos los numeros del arreglo\n");
     for(i=0; i<=15; i++)
     {
-        sumatotal= *pu8Data + sumatotal; 
+        u8sumatotal= *pu8Data + u8sumatotal; 
         pu8Data++;
     }
     
-    printf("Suma total: %d", sumatotal); 
-    u8Check = sumatotal % 10;
+    printf("Suma total: %d", u8sumatotal); 
+    u8Check = u8sumatotal % 10;
     printf("\nEl residuo es: %d", u8Check);	
 	
 
