@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "dani2.h"
+#include "structs1.h"
 #include <stdlib.h>
 
 /* Descripcion 
