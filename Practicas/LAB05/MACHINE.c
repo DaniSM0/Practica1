@@ -41,7 +41,7 @@ void main(void)
 			}
 			case enCheckProduct: 
 			{
-				if( u8DrinkSelection == 1 )
+				if( u8DrinkSelection == TRUE)
 				{
 					u8Teq++; 
 	   				u8ZumDNar++;
@@ -114,27 +114,27 @@ uint8 u8Stock;
 	   	printf("La bebida contiene: zumo de naranja, tequila");
 	   	if ( u8Teq >= Max )
 	   	{
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8ZumDNar >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}
-	   	if ( x == 1 && y == 1 )
+	   	if ( x == TRUE && y == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
 	}
@@ -143,35 +143,35 @@ uint8 u8Stock;
    		printf("La bebida tiene: tequila, zumo de pina, zumo de naranja ");
    		if ( u8Teq >= Max )
 	   	{ 
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8ZumDNar >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}
 	   	if ( u8ZumDPi >= Max )
 	   	{
-	   		z = 0;
+	   		z = FALSE;
 	   	}
 	   	else
 	   	{
-	   		z = 1; 
+	   		z = TRUE; 
 	   	}
-	   	if ( x == 1 && y == 1 && z == 1 )
+	   	if ( x == TRUE && y == TRUE && z == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
    }
@@ -180,36 +180,36 @@ uint8 u8Stock;
    		printf("La bebida tiene: whiskie, zumo de limon, agua con gas ");
    	    if ( u8Whiskie >= Max )
 	   	{ 
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8ZumDLim >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}
 	   	if ( u8AguaGas >= Max )
 	   	{
-	   		z = 0;
+	   		z = FALSE;
 	   	}
 	   	else
 	   	{
-	   		z = 1; 
+	   		z = TRUE; 
 	   	}
 	   	
-	   	if ( x == 1 && y == 1 && z == 1 )
+	   	if ( x == TRUE && y == TRUE && z == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
    }
@@ -218,35 +218,35 @@ uint8 u8Stock;
    		printf("La bebida tiene: whiskie, zumo de jengibre, zumo de limon ");
         if ( u8Whiskie >= Max )
 	   	{ 
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8ZumDLim >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}
 	   	if ( u8ZumDJen >= Max )
 	   	{
-	   		z = 0;
+	   		z = FALSE;
 	   	}
 	   	else
 	   	{
-	   		z = 1; 
+	   		z = TRUE; 
 	   	}
-	   	if ( x == 1 && y == 1 && z == 1 )
+	   	if ( x == TRUE && y == TRUE && z == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
    }
@@ -255,35 +255,35 @@ uint8 u8Stock;
    		printf("La bebida tiene: vodka, zumo de naranja, zumo de pina ");
    	    if ( u8Vodka >= Max )
 	   	{ 
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8ZumDNar >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}
 	   	if ( u8ZumDPi >= Max )
 	   	{
-	   		z = 0;
+	   		z = FALSE;
 	   	}
 	   	else
 	   	{
-	   		z = 1; 
+	   		z = TRUE; 
 	   	}
-	   	if ( x == 1 && y == 1 && z == 1 )
+	   	if ( x == TRUE && y == TRUE && z == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
    }
@@ -292,27 +292,27 @@ uint8 u8Stock;
    		printf("La bebida tiene: vodka, sprite");
    	    if ( u8Vodka >= Max )
 	   	{
-	   		x = 0;
+	   		x = FALSE;
 	   	}
 	   	else
 	   	{
-	   		x = 1; 
+	   		x = TRUE; 
 	   	}
 	   	if (u8Sprite >= Max)
 	   	{
-	   		y = 0; 
+	   		y = FALSE; 
 	   	}
 	   	else
 	   	{
-	   		y = 1;
+	   		y = TRUE;
 	   	}	   	
-	   	if ( x == 1 && y == 1 )
+	   	if ( x == TRUE && y == TRUE )
 	   	{
-	   		u8Stock = 1; 
+	   		u8Stock = TRUE; 
 	   	}
 	   	else
 	   	{
-	   		u8Stock = 0; 
+	   		u8Stock = FALSE; 
 	   		printf("\nNo hay suficiente producto para hacer la bebida");
 	   	}
    }
@@ -329,14 +329,6 @@ uint8 GetDrinkSelction ()
 	printf("\n\nWHISKIE: 3)Coctel Jack Julep 4)Peniciina");
 	printf("\n\nVODKA: 5)Coctel Veracruz 6)Vodka con Sprite\n");
 	scanf("%d", &u8DrinkSelection );
-	/*if ( u8DrinkSelection != 1 || u8DrinkSelection != 2 || u8DrinkSelection != 3 || u8DrinkSelection != 4 || u8DrinkSelection != 5 || u8DrinkSelection != 6)
-		{
-			printf("La bebida no se encuentra en las opciones\n");
-		}
-	    else
-		{
-		    /*Nothing To Do
-		}*/
 	return u8DrinkSelection;
 }
 
@@ -354,7 +346,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -364,7 +356,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 		printf("El vaso se encuentra en las posicion %d\n", i);
 		n=i; 
 		}
-		for( t= 0; t<=4; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 		printf("Se esta sirviendo tequila\n");
 		}
@@ -388,7 +380,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -398,7 +390,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo tequila\n");
 		}
@@ -408,7 +400,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i;
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo el zumo de naranja\n");
 		}
@@ -432,7 +424,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -442,7 +434,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t= 0; t<=4; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo whisky\n");
 		}
@@ -452,7 +444,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i;
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo el zumo de limon\n");
 		}
@@ -476,7 +468,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -486,7 +478,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo whisky\n");
 		}
@@ -496,7 +488,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i;
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo el zumo de limon\n");
 		}
@@ -520,7 +512,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -530,7 +522,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo vodka\n");
 		}
@@ -540,7 +532,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i;
 		}
-		for( t= 0; t<=3; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo el zumo de naranja\n");
 		}
@@ -564,7 +556,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 			printf("El vaso se encuentra en las posicion %d\n", i);
 			n=i; 
 		}
-		for( t=0; t<=1; t++)
+		for( t=0; t<=ICE; t++)
 		{
 			printf("Se esta sirviendo el hielo\n");
 		}
@@ -574,7 +566,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 		printf("El vaso se encuentra en las posicion %d\n", i);
 		n=i; 
 		}
-		for( t= 0; t<=4; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 		printf("Se esta sirviendo vodka\n");
 		}
@@ -584,7 +576,7 @@ uint8 PrepareDrink ( uint8 u8DrinkSelection )
 		printf("El vaso se encuentra en las posicion %d\n", i);
 		n=i;
 		}
-		for( t= 0; t<=4; t++)
+		for( t= 0; t<=TIME; t++)
 		{
 			printf("Se esta sirviendo sprite\n");
 		}
